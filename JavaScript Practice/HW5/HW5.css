@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #E0EEE8;
+}
+
+header {
+    font-size: 2em;
+    margin-bottom: 25px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(6, 50px);
+    grid-gap: 5px;
+	justify-content: center;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    background-color: lightgray;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+	grid-gap: 5px;
+    width: 80%;
+	margin-top: 7px;
+}
+
+.keyboard button {
+    padding: 10px;
+    background-color: #f7bd89;
+    border: none;
+    cursor: pointer;
+	border-radius: 9px;
+}
