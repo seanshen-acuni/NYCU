@@ -7,4 +7,5 @@ This repository is a **portfoilo of my programming projects**, covering **algori
 *Feel free to contact me if you need further information or collaboration.*
 - Email: **40924seanshen@gmail.com**
 - Discord: **.seanshen3288**
+
 Thank you for visiting my portfolio. Feel free to explore the projects!
