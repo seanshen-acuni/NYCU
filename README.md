@@ -1,4 +1,4 @@
-# Welcome to My Github Portfolio
+# Welcome to My Github!!
 
 Hi, I'm **Sean Shen**. I graduated with a **dual degree in Civil Engineering and Electronics and Electrical Engineering** from **National Yang Ming Chiao Tung University(NYCU),Taiwan**.
 
