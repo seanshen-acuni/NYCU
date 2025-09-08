@@ -4,7 +4,7 @@ Hi, I'm **Sean Shen**. I graduated with a **dual degree in Civil Engineering and
 
 This repository is a **portfoilo of my programming projects**, covering **algorithms, AI/ML, VLSI design, web development, and selected engineering project**. It summarizes the key works during my undergraduate studies.
 
-*Feel free to contact me if you need further information or collaboration.*
+*Feel free to contact me if you'd like further information or potential collaboration.*
 - Email: **40924seanshen@gmail.com**
 - Discord: **.seanshen3288**
 
