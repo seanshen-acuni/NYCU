@@ -1,0 +1,36 @@
+* "simulator" "HSPICE" 
+* "version" "D-2010.03-SP2 32-BIT"
+* "format" "HSP"
+* "rundate" "16:49:53 01/07/2025 "
+* "netlist" "c:\synopsys\vlsi_hw4\hw4_p3_2.sp "
+* "runtitle" ".temp 27"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ a =   0.            
++ abar =   1.8000        
++ abe =  74.6383n       
++ abe_pre =   1.8000        
++ aben =  74.6383n       
++ aben_pre =   1.8000        
++ ae =  74.6383n       
++ ae_pre =   1.8000        
++ aen =  74.6383n       
++ aen_pre =   1.8000        
++ e =   0.            
++ ebar =   1.8000        
++ phi =   0.            
++ vdd =   1.8000        
++ vss =   0.            
++ xdand1.net_foot = 448.0457m       
++ xdand1.net_mid =   1.1240        
++ xdand2.net_foot = 771.5072m       
++ xdand2.net_mid = 771.5073m       
++ xdand3.net_foot = 749.2589m       
++ xdand3.net_mid =   1.7534        
++ xdand4.net_foot =   1.7179        
++ xdand4.net_mid =   1.7351        
+***   END: Saved Operating Point ***                     

@@ -1,0 +1,12 @@
+$DATA1 SOURCE='HSPICE' VERSION='D-2010.03-SP2 32-BIT'
+.TITLE '.option post=2 probe'
+ vmax1            vmin1            trise1           tfall1            
+ vmax2            vmin2            trise2           tfall2            
+ vmax3            vmin3            trise3           tfall3            
+ vmax4            vmin4            trise4           tfall4            
+ temper           alter#            
+    1.8102        -2.593e-02        2.235e-08       -3.963e-08        
+    1.8124        -3.541e-02        1.525e-09        5.468e-10        
+    1.8135        -3.761e-02        2.332e-08       -3.974e-08        
+    1.8270        -4.184e-02        1.435e-10        3.386e-10        
+   25.0000        1                 

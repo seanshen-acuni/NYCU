@@ -1,0 +1,1127 @@
+//enstore
+module input_filter_mode(input clk, rst_n, filter_valid, filter_size, in_data, output  filter);
+logic [7:0]temp;
+output [7:0]filter[1:25];
+always@(posedge clk or negedge rst_n)begin
+	if(rst_n) begin
+		temp = 0;
+	end
+	else begin
+		if(!filter_valid) begin
+			temp  <= 0;
+			filter[1:25] <= 8'b0;
+		end
+		else begin 
+			if(filter_size) begin
+				temp <= in_data;
+				filter[25] <= temp;
+				filter[24] <= filter[25];
+				filter[22] <= filter[23];
+				filter[21] <= filter[22];
+				filter[20] <= filter[21];
+				filter[19] <= filter[20];
+				filter[18] <= filter[19];
+				filter[17] <= filter[18];
+				filter[16] <= filter[17];
+				filter[15] <= filter[16];
+				filter[14] <= filter[15];
+				filter[13] <= filter[14];
+				filter[12] <= filter[13];
+				filter[11] <= filter[12];
+				filter[10] <= filter[11];
+				filter[9] <= filter[10];
+				filter[8] <= filter[9];
+				filter[7] <= filter[8];
+				filter[6] <= filter[7];
+				filter[5] <= filter[6];
+				filter[4] <= filter[5];
+				filter[3] <= filter[4];
+				filter[2] <= filter[3];
+				filter[1] <= filter[2];
+			end
+			else begin
+				temp <= in_data;
+				filter[9] <= temp;
+				filter[8] <= filter[9];
+				filter[7] <= filter[8];
+				filter[6] <= filter[7];
+				filter[5] <= filter[6];
+				filter[4] <= filter[5];
+				filter[3] <= filter[4];
+				filter[2] <= filter[3];
+				filter[1] <= filter[2];
+			end
+		end
+	end
+end
+endmodule
+
+module input_image_mode(input clk, rst_n, image_valid, image_size, in_data, output  image[1:64]);				
+logic [7:0]temp;
+output [7:0]image[1:64];
+input [3:0]image_size;
+always@(posedge clk or negedge rst_n)begin
+	if(rst_n) begin
+		temp = 0;
+	end
+	else begin
+		if(!image_valid) begin
+			temp	 <= 8'b0;
+			filter[1:25]	 <= 8'b0;
+		end
+		else begin 
+			if(image_size==4'b0011) begin
+				temp <= in_data;
+				image[9]<= temp;
+				image[8] <= image[9];
+				image[7] <= image[8];
+				image[6] <= image[7];
+				image[5] <= image[6];
+				image[4] <= image[5];
+				image[3] <= image[4];
+				image[2] <= image[3];
+				image[1] <= image[2];
+			end
+			else if (image_size==4'b0100) begin
+				temp <= in_data;
+				image[16] <= temp;
+				image[15] <= image[16];
+				image[14] <= image[15];
+				image[13] <= image[14];
+				image[12] <= image[13];
+				image[11] <= image[12];
+				image[10] <= image[11];
+				image[9]   <= image[10];
+				image[8]   <= image[9];
+				image[7]   <= image[8];
+				image[6]   <= image[7];
+				image[5]   <= image[6];
+				image[4]   <= image[5];
+				image[3]   <= image[4];
+				image[2]   <= image[3];
+				image[1]   <= image[2];
+			end
+			else if (image_size == 4'b0101) begin
+				temp <= in_data;
+				image[25] <= temp;
+				image[24] <= image[25];
+				image[22] <= image[23];
+				image[21] <= image[22];
+				image[20] <= image[21];
+				image[19] <= image[20];
+				image[18] <= image[19];
+				image[17] <= image[18];
+				image[16] <= image[17];
+				image[15] <= image[16];
+				image[14] <= image[15];
+				image[13] <= image[14];
+				image[12] <= image[13];
+				image[11] <= image[12];
+				image[10] <= image[11];
+				image[9]   <= image[10];
+				image[8]   <= image[9];
+				image[7]   <= image[8];
+				image[6]   <= image[7];
+				image[5]   <= image[6];
+				image[4]   <= image[5];
+				image[3]   <= image[4];
+				image[2]   <= image[3];
+				image[1]   <= image[2];
+			end
+			else if (image_size == 4'b0110) begin
+ 				 temp <= in_data;
+ 				 image[36] <= temp;
+ 				 image[35] <= image[36];
+ 				 image[34] <= image[35];
+ 				 image[33] <= image[34];
+				 image[32] <= image[33];
+ 				 image[31] <= image[32];
+ 				 image[30] <= image[31];
+ 				 image[29] <= image[30];
+				 image[28] <= image[29];
+ 				 image[27] <= image[28];
+ 				 image[26] <= image[27];
+ 				 image[25] <= image[26];
+				 image[24] <= image[25];
+ 				 image[23] <= image[24];
+ 				 image[22] <= image[23];
+ 				 image[21] <= image[22];
+ 				 image[20] <= image[21];
+ 				 image[19] <= image[20];
+ 				 image[18] <= image[19];
+ 				 image[17] <= image[18];
+ 				 image[16] <= image[17];
+				 image[15] <= image[16];
+				 image[14] <= image[15];
+ 				 image[13] <= image[14];
+ 				 image[12] <= image[13];
+ 				 image[11] <= image[12];
+ 				 image[10] <= image[11];
+ 				 image[9]   <= image[10];
+ 				 image[8]   <= image[9];
+ 				 image[7]   <= image[8];
+ 				 image[6]   <= image[7];
+ 				 image[5]   <= image[6];
+ 				 image[4]   <= image[5];
+ 				 image[3]   <= image[4];
+ 				 image[2]   <= image[3];
+ 				 image[1]   <= image[2];
+			end
+			else if (image_size == 3'b111) begin
+  				temp <= in_data;
+   				image[49] <= temp;
+  				image[48] <= image[49];
+   				image[47] <= image[48];
+   				image[46] <= image[47];
+   				image[45] <= image[46];
+   				image[44] <= image[45];
+   				image[43] <= image[44];
+   				image[42] <= image[43];
+   				image[41] <= image[42];
+   				image[40] <= image[41];
+   				image[39] <= image[40];
+  				image[38] <= image[39];
+   				image[37] <= image[38];
+  				image[36] <= image[37];
+   				image[35] <= image[36];
+   				image[34] <= image[35];
+   				image[33] <= image[34];
+   				image[32] <= image[33];
+   				image[31] <= image[32];
+   				image[30] <= image[31];
+   				image[29] <= image[30];
+   				image[28] <= image[29];
+   				image[27] <= image[28];
+   				image[26] <= image[27];
+   				image[25] <= image[26];
+   				image[24] <= image[25];
+   				image[23] <= image[24];
+  				image[22] <= image[23];
+   				image[21] <= image[22];
+   				image[20] <= image[21];
+   				image[19] <= image[20];
+   				image[18] <= image[19];
+  				image[17] <= image[18];
+   				image[16] <= image[17];
+   				image[15] <= image[16];
+   				image[14] <= image[15];
+   				image[13] <= image[14];
+   				image[12] <= image[13];
+   				image[11] <= image[12];
+  		 		image[10] <= image[11];
+   				image[9]   <= image[10];
+   				image[8]   <= image[9];
+   				image[7]   <= image[8];
+   				image[6]   <= image[7];
+   				image[5]   <= image[6];
+   				image[4]   <= image[5];
+   				image[3]   <= image[4];
+  	 			image[2]   <= image[3];
+   				image[1]   <= image[2];
+			end
+			else if (image_size == 3'b1000) begin
+   				temp <= in_data;
+   				image[64] <= temp;
+   				image[63] <= image[64];
+   				image[62] <= image[63];
+   				image[61] <= image[62];
+   				image[60] <= image[61];
+   				image[59] <= image[60];
+   				image[58] <= image[59];
+   				image[57] <= image[58];
+  	 			image[56] <= image[57];
+   				image[55] <= image[56];
+   				image[54] <= image[55];
+   				image[53] <= image[54];
+   				image[52] <= image[53];
+   				image[51] <= image[52];
+   				image[50] <= image[51];
+   				image[49] <= image[50];
+  	 			Image[48] <= image[49];
+   				image[47] <= image[48];
+   				image[46] <= image[47];
+   				image[45] <= image[46];
+   				image[44] <= image[45];
+   				image[43] <= image[44];
+   				Image[42] <= image[43];
+   				image[41] <= image[42];
+   				image[40] <= image[41];
+   				image[39] <= image[40];
+   				image[38] <= image[39];
+   				image[37] <= image[38];
+   				image[36] <= image[37];
+   				image[35] <= image[36];
+   				image[34] <= image[35];
+   				image[33] <= image[34];
+   				image[32] <= image[33];
+   				image[31] <= image[32];
+   				image[30] <= image[31];
+   				image[29] <= image[30];
+   				image[28] <= image[29];
+   				image[27] <= image[28];
+   				image[26] <= image[27];
+   				image[25] <= image[26];
+   				image[24] <= image[25];
+   				image[23] <= image[24];
+   				image[22] <= image[23];
+   				image[21] <= image[22];
+   				image[20] <= image[21];
+   				Image[19] <= image[20];
+   				image[18] <= image[19];
+   				image[17] <= image[18];
+   				image[16] <= image[17];
+   				image[15] <= image[16];
+   				image[14] <= image[15];
+   				image[13] <= image[14];
+   				image[12] <= image[13];
+   				image[11] <= image[12];
+   				image[10] <= image[11];
+   				image[9]   <= image[10];
+   				image[8]   <= image[9];
+   				image[7]   <= image[8];
+   				image[6]   <= image[7];
+   				image[5]   <= image[6];
+   				Image[4]   <= image[5];
+ 				image[3]   <= image[4];
+   				image[2]   <= image[3];
+   				image[1]   <= image[2];
+			end
+		end
+	end
+end
+endmodule
+
+//padding
+module padding(input clk,rst_n,image_valid, image, filter_size, image_size, output image_pad)
+output [7:0]image_pad[1:144];
+always@(negedge image_valid or negedge rst_n)begin
+	if(rst_n) begin
+		temp = 0;
+		image_pad[1:64] <= 8'b0;
+	end
+	else begin
+//need padding(zero)
+//adding one layer	
+	else if(filter_size == 0 && pad_mode == 0) begin
+		case(image_size)
+			4'b0011 : begin
+				image_pad[1:6]     <= 8'b0;
+				image_pad[7:9]     <= image[1:3];
+				image_pad[10:11] <= 8'b0;
+				image_pad[12:14] <= image[4:6];
+				image_pad[15:16] <= 8'b0;
+				image_pad[17:19] <= image[7:9];
+				image_pad[20:25] <= 8'b0;
+			end
+			4'b0100 : begin
+				image_pad[1:7]     <= 8'b0;
+				image_pad[8:11]   <= image[1:4];
+				image_pad[12:13] <= 8'b0;
+				image_pad[14:17] <= image[5:8];
+				image_pad[18:19] <= 8'b0;
+				image_pad[20:23] <= image[9:12];
+				image_pad[24:25] <= 8'b0;
+				image_pad[26:30] <= image[13:16];
+				image_pad[31:36] <= 8'b0;
+			end
+			4'b0101 : begin
+				image_pad[1:8]     <= 8'b0;
+  				image_pad[9:13]   <= image[1:5];
+  				image_pad[14:15] <= 8'b0;
+ 				image_pad[16:20] <= image[6:10];
+  				image_pad[21:22] <= 8'b0;
+  				image_pad[23:27] <= image[11:15];
+ 	 			image_pad[28:29] <= 8'b0;
+  				image_pad[30:34] <= image[16:20];
+ 	 			image_pad[35:36] <= 8'b0;
+  				image_pad[37:41] <= image[21:25];
+  				image_pad[42:49] <= 8'b0; 
+			end
+			4'b0110 : begin
+				image_pad[1:9]     <= 8'b0;
+      				image_pad[10:15] <= image[1:6];
+      				image_pad[16:17] <= 8'b0;
+      				image_pad[18:23] <= image[7:12];
+      				image_pad[24:25] <= 8'b0;
+      				image_pad[26:31] <= image[13:18];
+      				image_pad[34:35] <= 8'b0;
+      				image_pad[36:41] <= image[19:24];
+      				image_pad[42:43] <= 8'b0;
+      				image_pad[44:49] <= image[25:30];
+      				image_pad[50:51] <= 8'b0;
+      				image_pad[52:57] <= image[31:36];
+      				image_pad[58:64] <= 8'b0;
+    			end
+			4'b0111 : begin
+    				image_pad[1:10]     <= 8'b0;
+    				image_pad[11:17] <= image[1:7];
+    				image_pad[18:19] <= 8'b0;
+    				image_pad[20:26] <= image[8:14];
+    				image_pad[27:28] <= 8'b0;
+    				image_pad[29:35] <= image[15:21];
+    				image_pad[36:37] <= 8'b0;
+    				image_pad[38:44] <= image[22:28];
+    				image_pad[45:46] <= 8'b0;
+    				image_pad[47:53] <= image[29:35];
+    				image_pad[54:55] <= 8'b0;
+    				image_pad[56:62] <= image[36:42];
+    				image_pad[63:64] <= 8'b0;
+				image_pad[65:71] <= image[43:49];
+    				image_pad[72:81] <= 8'b0;
+  			end
+			4'b1000 : begin
+				image_pad[1:11]   <= 8'b0;
+    				image_pad[12:19] <= image[1:8];
+    				image_pad[20:21] <= 8'b0;
+    				image_pad[22:29] <= image[9:16];
+    				image_pad[30:31] <= 8'b0;
+    				image_pad[32:39] <= image[17:24];
+    				image_pad[40:41] <= 8'b0;
+    				image_pad[42:49] <= image[25:32];
+    				image_pad[50:51] <= 8'b0;
+    				image_pad[52:59] <= image[33:40];
+    				image_pad[60:61] <= 8'b0;
+    				image_pad[62:69] <= image[41:48];
+    				image_pad[70:71] <= 8'b0;
+				image_pad[72:79] <= image[49:56];
+    				image_pad[80:81] <= 8'b0;
+				image_pad[82:89] <= image[57:64];
+    				image_pad[90:100] <= 8'b0;
+			end
+		endcase
+	end
+//adding two layer			
+	else if(filter_size == 1 && pad_mode == 0) begin
+		case(image_size)
+			4'b0011 : begin
+				image_pad[1:16]   <= 8'b0;
+				image_pad[17:19] <= image[1:3];
+				image_pad[20:23] <= 8'b0;
+				image_pad[24:26] <= image[4:6];
+				image_pad[27:30] <= 8'b0;
+				image_pad[31:33] <= image[7:9];
+				image_pad[34:49] <= 8'b0;
+			end
+			4'b0100 : begin
+				image_pad[1:18]   <= 8'b0;
+				image_pad[19:22] <= image[1:4];
+				image_pad[23:26] <= 8'b0;
+				image_pad[27:30] <= image[5:8];
+				image_pad[31:34] <= 8'b0;
+				image_pad[35:38] <= image[9:12];
+				image_pad[39:42] <= 8'b0;
+				image_pad[43:46] <= image[13:16];
+				image_pad[47:64] <= 8'b0;
+			end
+			4'b0101 : begin
+				image_pad[1:20]   <= 8'b0;
+  				image_pad[21:25] <= image[1:5];
+  				image_pad[26:29] <= 8'b0;
+ 				image_pad[30:34] <= image[6:10];
+  				image_pad[35:38] <= 8'b0;
+  				image_pad[39:43] <= image[11:15];
+ 	 			image_pad[44:47] <= 8'b0;
+  				image_pad[48:52] <= image[16:20];
+ 	 			image_pad[53:56] <= 8'b0;
+  				image_pad[57:61] <= image[21:25];
+  				image_pad[62:81] <= 8'b0; 
+			end
+			4'b0110 : begin
+				image_pad[1:22]   <= 8'b0;
+      				image_pad[23:28] <= image[1:6];
+      				image_pad[29:32] <= 8'b0;
+      				image_pad[33:38] <= image[7:12];
+      				image_pad[39:42] <= 8'b0;
+      				image_pad[43:48] <= image[13:18];
+      				image_pad[49:52] <= 8'b0;
+      				image_pad[53:58] <= image[19:24];
+      				image_pad[59:62] <= 8'b0;
+      				image_pad[63:68] <= image[25:30];
+      				image_pad[69:72] <= 8'b0;
+      				image_pad[73:78] <= image[31:36];
+      				image_pad[79:100] <= 8'b0;
+    			end
+			4'b0111 : begin
+    				image_pad[1:24]   <= 8'b0;
+    				image_pad[25:31] <= image[1:7];
+    				image_pad[32:35] <= 8'b0;
+    				image_pad[36:42] <= image[8:14];
+    				image_pad[43:46] <= 8'b0;
+    				image_pad[47:53] <= image[15:21];
+    				image_pad[54:57] <= 8'b0;
+    				image_pad[58:64] <= image[22:28];
+    				image_pad[65:68] <= 8'b0;
+    				image_pad[69:75] <= image[29:35];
+    				image_pad[76:79] <= 8'b0;
+    				image_pad[80:86] <= image[36:42];
+    				image_pad[87:90] <= 8'b0;
+				image_pad[91:97] <= image[43:49];
+    				image_pad[98:121] <= 8'b0;
+  			end
+			4'b1000 : begin
+				image_pad[1:26]   <= 8'b0;
+    				image_pad[27:34] <= image[1:8];
+    				image_pad[35:38] <= 8'b0;
+    				image_pad[39:46] <= image[9:16];
+    				image_pad[47:50] <= 8'b0;
+    				image_pad[51:58] <= image[17:24];
+    				image_pad[59:62] <= 8'b0;
+    				image_pad[63:70] <= image[25:32];
+    				image_pad[71:74] <= 8'b0;
+    				image_pad[75:82] <= image[33:40];
+    				image_pad[83:86] <= 8'b0;
+    				image_pad[87:94] <= image[41:48];
+    				image_pad[95:98] <= 8'b0;
+				image_pad[99:106]   <= image[49:56];
+    				image_pad[107:110] <= 8'b0;
+				image_pad[111:118] <= image[57:64];
+    				image_pad[119:144] <= 8'b0;
+			end
+		endcase
+	end
+//need padding(replication)
+//adding one layer
+	else if(filter_size == 0 && pad_mode == 1)
+		case(image_size)
+			4'b0011 : begin
+				image_pad[1:2] 	<= image[1];
+				image_pad[6:7] 	<= image[1];
+				image_pad[3]		<= image[2];
+				image_pad[8] 		<= image[2];
+				image_pad[4:5] 	<= image[3];
+				image_pad[9:10] 	<= image[3];
+				image_pad[11:12] 	<= image[4];
+				image_pad[13] 	<= image[5];
+				image_pad[14:15] 	<= image[6];
+				image_pad[16:17] 	<= image[7];
+				image_pad[21:22] 	<= image[7];
+				image_pad[18] 	<= image[8];
+				image_pad[23] 	<= image[8];
+				image_pad[19:20] 	<= image[9];
+				image_pad[24:25] 	<= image[9];
+			end
+			4'b0100 : begin
+				image_pad[1:2] 	<= image[1];
+				image_pad[7:8] 	<= image[1];
+				image_pad[3]		<= image[2];
+				image_pad[9] 		<= image[2];
+				image_pad[4] 		<= image[3];
+				image_pad[10] 	<= image[3];
+				image_pad[5:6]	<= image[4];
+				image_pad[11:12] 	<= image[4];
+				image_pad[13:14] 	<= image[5];
+				image_pad[15] 	<= image[6];
+				image_pad[16] 	<= image[7];
+				image_pad[17:18]	<= image[8];
+				image_pad[19:20]	<= image[9];
+				image_pad[21] 	<= image[10];
+				image_pad[22] 	<= image[11];
+				image_pad[23:24] 	<= image[12];
+				image_pad[25:26] 	<= image[13];
+				image_pad[31:32] 	<= image[13];
+				image_pad[27]	<= image[14];
+				image_pad[33] 	<= image[14];
+				image_pad[28] 	<= image[15];
+				image_pad[34] 	<= image[15];
+				image_pad[29:30] 	<= image[16];
+				image_pad[35:36] 	<= image[16];
+			end
+			4'b0101 : begin
+				image_pad[1:2] 	<= image[1];
+				image_pad[8:9] 	<= image[1];
+				image_pad[3]		<= image[2];
+				image_pad[10] 	<= image[2];
+				image_pad[4] 		<= image[3];
+				image_pad[11] 	<= image[3];
+				image_pad[5]		<= image[4];
+				image_pad[12]	<= image[4];
+				image_pad[6:7]	<= image[5];
+				image_pad[13:14] 	<= image[5];
+				image_pad[15:16] 	<= image[6];
+				image_pad[17] 	<= image[7];
+				image_pad[18]	<= image[8];
+				image_pad[19]	<= image[9];
+				image_pad[20:21]	<= image[10];
+				image_pad[22:23] 	<= image[11];
+				image_pad[24] 	<= image[12];
+				image_pad[25] 	<= image[13];
+				image_pad[26] 	<= image[14];
+				image_pad[27:28] 	<= image[15];
+				image_pad[29:30]	<= image[16];
+				image_pad[31]	<= image[17];
+				image_pad[32]	<= image[18];
+				image_pad[33]	<= image[19];
+				image_pad[34:35] 	<= image[20];
+				image_pad[36:37] 	<= image[21];
+				image_pad[43:44] 	<= image[21];
+				image_pad[38] 	<= image[22];
+				image_pad[45] 	<= image[22];
+				image_pad[39] 	<= image[23];
+				image_pad[46] 	<= image[23];
+				image_pad[40] 	<= image[24];
+				image_pad[47] 	<= image[24];
+				image_pad[41:42] 	<= image[25];
+				image_pad[48:49] 	<= image[25];
+			end
+			4'b0110 : begin
+				image_pad[1:2] 	<= image[1];
+				image_pad[9:10] 	<= image[1];
+				image_pad[3]		<= image[2];
+				image_pad[11] 	<= image[2];
+				image_pad[4] 		<= image[3];
+				image_pad[12] 	<= image[3];
+				image_pad[5]		<= image[4];
+				image_pad[13] 	<= image[4];
+				image_pad[6] 		<= image[5];
+				image_pad[14] 	<= image[5];
+				image_pad[7:8] 	<= image[6];
+				image_pad[15:16] 	<= image[6];
+				image_pad[17:18] 	<= image[7];
+				image_pad[19]	<= image[8];
+				image_pad[20]	<= image[9];
+				image_pad[21] 	<= image[10];
+				image_pad[22] 	<= image[11];
+				image_pad[23:24] 	<= image[12];
+				image_pad[25:26] 	<= image[13];
+				image_pad[27]	<= image[14];
+				image_pad[28] 	<= image[15];
+				image_pad[29] 	<= image[16];
+				image_pad[30] 	<= image[17];
+				image_pad[31:32] 	<= image[18];
+				image_pad[33:34] 	<= image[19];
+				image_pad[35] 	<= image[20];
+				image_pad[36] 	<= image[21];
+				image_pad[37] 	<= image[22];
+				image_pad[38] 	<= image[23];
+				image_pad[39:40] 	<= image[24];
+				image_pad[41:42] 	<= image[25];
+				image_pad[43] 	<= image[26];
+				image_pad[44] 	<= image[27];
+				image_pad[45] 	<= image[28];
+				image_pad[46] 	<= image[29];
+				image_pad[47:48] 	<= image[30];
+				image_pad[49:50] 	<= image[31];
+				image_pad[57:58] 	<= image[31];
+				image_pad[51] 	<= image[32];
+				image_pad[59] 	<= image[32];
+				image_pad[52]	<= image[33];
+				image_pad[60]	<= image[33];
+				image_pad[53] 	<= image[34];
+				image_pad[61] 	<= image[34];
+				image_pad[54] 	<= image[35];
+				image_pad[62] 	<= image[35];
+				image_pad[55:56] 	<= image[36];
+				image_pad[63:64] 	<= image[36];
+			end
+			4'b0111 : begin
+				image_pad[1:2] 	<= image[1];
+				image_pad[10:11] 	<= image[1];
+				image_pad[3]		<= image[2];
+				image_pad[12] 	<= image[2];
+				image_pad[4] 		<= image[3];
+				image_pad[13] 	<= image[3];
+				image_pad[5]		<= image[4];
+				image_pad[14]	<= image[4];
+				image_pad[6] 		<= image[5];
+				image_pad[15] 	<= image[5];
+				image_pad[7] 		<= image[6];
+				image_pad[16] 	<= image[6];
+				image_pad[8:9] 	<= image[7];
+				image_pad[17:18] 	<= image[7];
+				image_pad[19:20]	<= image[8];
+				image_pad[21]	<= image[9];
+				image_pad[22] 	<= image[10];
+				image_pad[23] 	<= image[11];
+				image_pad[24] 	<= image[12];
+				image_pad[25] 	<= image[13];
+				image_pad[26:27] 	<= image[14];
+				image_pad[28:29] 	<= image[15];
+				image_pad[30]	<= image[16];
+				image_pad[31] 	<= image[17];
+				image_pad[32] 	<= image[18];
+				image_pad[33] 	<= image[19];
+				image_pad[34] 	<= image[20];
+				image_pad[35:36]	<= image[21];
+				image_pad[37:38] 	<= image[22];
+				image_pad[39] 	<= image[23];
+				image_pad[40] 	<= image[24];
+				image_pad[41] 	<= image[25];
+				image_pad[42] 	<= image[26];
+				image_pad[43] 	<= image[27];
+				image_pad[44:45] 	<= image[28];
+				image_pad[46:47] 	<= image[29];
+				image_pad[48] 	<= image[30];
+				image_pad[49] 	<= image[31];
+				image_pad[50] 	<= image[32];
+				image_pad[51] 	<= image[33];
+				image_pad[52] 	<= image[34];
+				image_pad[53:54] 	<= image[35];
+				image_pad[55:56] 	<= image[36];
+				image_pad[57] 	<= image[37];
+				image_pad[58] 	<= image[38];
+				image_pad[59] 	<= image[39];
+				image_pad[60] 	<= image[40];
+				image_pad[61] 	<= image[41];
+				image_pad[62:63] 	<= image[42];
+				image_pad[64:65] 	<= image[43];
+				image_pad[73:74] 	<= image[43];
+				image_pad[66] 	<= image[44];
+				image_pad[75] 	<= image[44];
+				image_pad[67] 	<= image[45];
+				image_pad[76] 	<= image[45];
+				image_pad[68] 	<= image[46];
+				image_pad[77] 	<= image[46];
+				image_pad[69] 	<= image[47];
+				image_pad[78] 	<= image[47];
+				image_pad[70] 	<= image[48];
+				image_pad[79] 	<= image[48];
+				image_pad[71:72] 	<= image[49];
+				image_pad[80:81] 	<= image[49];
+			end
+			4'b1000 : begin
+				image_pad[1:2] 	<= image[1];
+				image_pad[11:12] 	<= image[1];
+				image_pad[3]		<= image[2];
+				image_pad[13] 	<= image[2];
+				image_pad[4] 		<= image[3];
+				image_pad[14] 	<= image[3];
+				image_pad[5]		<= image[4];
+				image_pad[15] 	<= image[4];
+				image_pad[6] 		<= image[5];
+				image_pad[16] 	<= image[5];
+				image_pad[7] 		<= image[6];
+				image_pad[17] 	<= image[6];
+				image_pad[8] 		<= image[7];
+				image_pad[18] 	<= image[7];
+				image_pad[9:10] 	<= image[8];
+				image_pad[19:20] 	<= image[8];
+				image_pad[21:22]	<= image[9];
+				image_pad[23]	<= image[10];
+				image_pad[24] 	<= image[11];
+				image_pad[25] 	<= image[12];
+				image_pad[26] 	<= image[13];
+				image_pad[27] 	<= image[14];
+				image_pad[28] 	<= image[15];
+				image_pad[29:30]	<= image[16];
+				image_pad[31:32] 	<= image[17];
+				image_pad[33] 	<= image[18];
+				image_pad[34] 	<= image[19];
+				image_pad[35]	<= image[20];
+				image_pad[36] 	<= image[21];
+				image_pad[37] 	<= image[22];
+				image_pad[38] 	<= image[23];
+				image_pad[39:40]	<= image[24];
+				image_pad[41:42] 	<= image[25];
+				image_pad[43] 	<= image[26];
+				image_pad[44] 	<= image[27];
+				image_pad[45] 	<= image[28];
+				image_pad[46] 	<= image[29];
+				image_pad[47] 	<= image[30];
+				image_pad[48] 	<= image[31];
+				image_pad[49:50]	<= image[32];
+				image_pad[51:52] 	<= image[33];
+				image_pad[53] 	<= image[34];
+				image_pad[54] 	<= image[35];
+				image_pad[55] 	<= image[36];
+				image_pad[56] 	<= image[37];
+				image_pad[57] 	<= image[38];
+				image_pad[58] 	<= image[39];
+				image_pad[59:60] 	<= image[40];
+				image_pad[61:62] 	<= image[41];
+				image_pad[63] 	<= image[42];
+				image_pad[64] 	<= image[43];
+				image_pad[65] 	<= image[44];
+				image_pad[66] 	<= image[45];
+				image_pad[67] 	<= image[46];
+				image_pad[68] 	<= image[47];
+				image_pad[69:70] 	<= image[48];
+				image_pad[71:72] 	<= image[49];
+				image_pad[73] 	<= image[50];
+				image_pad[74] 	<= image[51];
+				image_pad[75] 	<= image[52];
+				image_pad[76] 	<= image[53];
+				image_pad[77] 	<= image[54];
+				image_pad[78] 	<= image[55];
+				image_pad[79:80] 	<= image[56];
+				image_pad[81:82] 	<= image[57];
+				image_pad[91:92] 	<= image[57];
+				image_pad[83] 	<= image[58];
+				image_pad[93] 	<= image[58];
+				image_pad[84] 	<= image[59];
+				image_pad[94] 	<= image[59];
+				image_pad[85] 	<= image[60];
+				image_pad[95] 	<= image[60];
+				image_pad[86] 	<= image[61];
+				image_pad[96] 	<= image[61];
+				image_pad[87] 	<= image[62];
+				image_pad[97] 	<= image[62];
+				image_pad[88] 	<= image[63];
+				image_pad[98] 	<= image[63];
+				image_pad[89:90] 	<= image[64];
+				image_pad[99:100] <= image[64];
+			end
+		endcase
+	end
+//adding two layer			
+	else if(filter_size == 1 && pad_mode == 1)
+		case(image_size)
+			4'b0011 : begin
+				image_pad[1:3] 	<= image[1];
+				image_pad[8:10] 	<= image[1];
+				image_pad[15:17] 	<= image[1];
+				image_pad[4]		<= image[2];
+				image_pad[11] 	<= image[2];
+				image_pad[18] 	<= image[2];
+				image_pad[5:7] 	<= image[3];
+				image_pad[12:14] 	<= image[3];
+				image_pad[19:21] 	<= image[3];
+				image_pad[22:24] 	<= image[4];
+				image_pad[25] 	<= image[5];
+				image_pad[26:28] 	<= image[6];
+				image_pad[29:31] 	<= image[7];
+				image_pad[36:38] 	<= image[7];
+				image_pad[43:45] 	<= image[7];
+				image_pad[32] 	<= image[8];
+				image_pad[39] 	<= image[8];
+				image_pad[46] 	<= image[8];
+				image_pad[33:35] 	<= image[9];
+				image_pad[40:42] 	<= image[9];
+				image_pad[47:49] 	<= image[9];
+			end
+			4'b0100 : begin
+				image_pad[1:3] 	<= image[1];
+				image_pad[9:11] 	<= image[1];
+				image_pad[17:19] 	<= image[1];
+				image_pad[4]		<= image[2];
+				image_pad[12] 	<= image[2];
+				image_pad[20] 	<= image[2];
+				image_pad[5] 		<= image[3];
+				image_pad[13] 	<= image[3];
+				image_pad[21] 	<= image[3];
+				image_pad[6:8]	<= image[4];
+				image_pad[14:16] 	<= image[4];
+				image_pad[22:24] 	<= image[4];
+				image_pad[25:27] 	<= image[5];
+				image_pad[28] 	<= image[6];
+				image_pad[29] 	<= image[7];
+				image_pad[30:32]	<= image[8];
+				image_pad[33:35]	<= image[9];
+				image_pad[36] 	<= image[10];
+				image_pad[37] 	<= image[11];
+				image_pad[38:40] 	<= image[12];
+				image_pad[41:43] 	<= image[13];
+				image_pad[49:51] 	<= image[13];
+				image_pad[57:59] 	<= image[13];
+				image_pad[44] 	<= image[14];
+				image_pad[52]	<= image[14];
+				image_pad[60] 	<= image[14];
+				image_pad[45] 	<= image[15];
+				image_pad[53] 	<= image[15];
+				image_pad[61] 	<= image[15];
+				image_pad[46:48] 	<= image[16];
+				image_pad[54:56] 	<= image[16];
+				image_pad[62:64] 	<= image[16];
+			end
+			4'b0101 : begin
+				image_pad[1:3] 	<= image[1];
+				image_pad[10:12] 	<= image[1];
+				image_pad[19:21] 	<= image[1];
+				image_pad[4]		<= image[2];
+				image_pad[13] 	<= image[2];
+				image_pad[22] 	<= image[2];
+				image_pad[5] 		<= image[3];
+				image_pad[14] 	<= image[3];
+				image_pad[23] 	<= image[3];
+				image_pad[6]		<= image[4];
+				image_pad[15]	<= image[4];
+				image_pad[24]	<= image[4];
+				image_pad[7:9]	<= image[5];
+				image_pad[16:18] 	<= image[5];
+				image_pad[25:27] 	<= image[5];
+				image_pad[28:30] 	<= image[6];
+				image_pad[31] 	<= image[7];
+				image_pad[32]	<= image[8];
+				image_pad[33]	<= image[9];
+				image_pad[34:36]	<= image[10];
+				image_pad[37:39] 	<= image[11];
+				image_pad[40] 	<= image[12];
+				image_pad[41] 	<= image[13];
+				image_pad[42] 	<= image[14];
+				image_pad[43:45] 	<= image[15];
+				image_pad[46:48]	<= image[16];
+				image_pad[49]	<= image[17];
+				image_pad[50]	<= image[18];
+				image_pad[51]	<= image[19];
+				image_pad[52:54] 	<= image[20];
+				image_pad[55:57] 	<= image[21];
+				image_pad[64:66] 	<= image[21];
+				image_pad[73:75] 	<= image[21];
+				image_pad[58] 	<= image[22];
+				image_pad[67] 	<= image[22];
+				image_pad[76] 	<= image[22];
+				image_pad[59] 	<= image[23];
+				image_pad[68] 	<= image[23];
+				image_pad[77] 	<= image[23];
+				image_pad[60] 	<= image[24];
+				image_pad[69] 	<= image[24];
+				image_pad[78] 	<= image[24];
+				image_pad[61:63] 	<= image[25];
+				image_pad[70:72] 	<= image[25];
+				image_pad[79:81] 	<= image[25];
+			end
+			4'b0110 : begin
+				image_pad[1:3] 	<= image[1];
+				image_pad[11:13] 	<= image[1];
+				image_pad[21:23] 	<= image[1];
+				image_pad[4] 		<= image[2];
+				image_pad[14] 	<= image[2];
+				image_pad[24] 	<= image[2];
+				image_pad[5]		<= image[3];
+				image_pad[15]	<= image[3];
+				image_pad[25]	<= image[3];
+				image_pad[6] 		<= image[4];
+				image_pad[16] 	<= image[4];
+				image_pad[26] 	<= image[4];
+				image_pad[7] 		<= image[5];
+				image_pad[17] 	<= image[5];
+				image_pad[27] 	<= image[5];
+				image_pad[8:10] 	<= image[6];
+				image_pad[18:20] 	<= image[6];
+				image_pad[28:30] 	<= image[6];
+				image_pad[31:33] 	<= image[7];
+				image_pad[34]	<= image[8];
+				image_pad[35]	<= image[9];
+				image_pad[36] 	<= image[10];
+				image_pad[37] 	<= image[11];
+				image_pad[38:40] 	<= image[12];
+				image_pad[41:43] 	<= image[13];
+				image_pad[44]	<= image[14];
+				image_pad[45] 	<= image[15];
+				image_pad[46] 	<= image[16];
+				image_pad[47] 	<= image[17];
+				image_pad[48:50] 	<= image[18];
+				image_pad[51:53] 	<= image[19];
+				image_pad[54] 	<= image[20];
+				image_pad[55] 	<= image[21];
+				image_pad[56] 	<= image[22];
+				image_pad[57] 	<= image[23];
+				image_pad[58:60] 	<= image[24];
+				image_pad[61:63] 	<= image[25];
+				image_pad[64] 	<= image[26];
+				image_pad[65] 	<= image[27];
+				image_pad[66] 	<= image[28];
+				image_pad[67] 	<= image[29];
+				image_pad[68:70] 	<= image[30];
+				image_pad[71:73] 	<= image[31];
+				image_pad[81:83] 	<= image[31];
+				image_pad[91:93] 	<= image[31];
+				image_pad[74] 	<= image[32];
+				image_pad[84] 	<= image[32];
+				image_pad[94] 	<= image[32];
+				image_pad[75]	<= image[33];
+				image_pad[85]	<= image[33];
+				image_pad[95] 	<= image[33];
+				image_pad[76] 	<= image[34];
+				image_pad[86] 	<= image[34];
+				image_pad[96] 	<= image[34];
+				image_pad[77] 	<= image[35];
+				image_pad[87] 	<= image[35];
+				image_pad[97] 	<= image[35];
+				image_pad[78:80] 	<= image[36];
+				image_pad[88:90] 	<= image[36];
+				image_pad[98:100] <= image[36];
+			4'b0111 : begin
+				image_pad[1:3] 	<= image[1];
+				image_pad[12:14] 	<= image[1];
+				image_pad[23:25] 	<= image[1];
+				image_pad[4]		<= image[2];
+				image_pad[15] 	<= image[2];
+				image_pad[26] 	<= image[2];
+				image_pad[5] 		<= image[3];
+				image_pad[16] 	<= image[3];
+				image_pad[27] 	<= image[3];
+				image_pad[6]		<= image[4];
+				image_pad[17]	<= image[4];
+				image_pad[28]	<= image[4];
+				image_pad[7] 		<= image[5];
+				image_pad[18] 	<= image[5];
+				image_pad[29] 	<= image[5];
+				image_pad[8] 		<= image[6];
+				image_pad[19] 	<= image[6];
+				image_pad[30] 	<= image[6];
+				image_pad[9:11] 	<= image[7];
+				image_pad[20:22] 	<= image[7];
+				image_pad[31:33] 	<= image[7];
+				image_pad[34:36]	<= image[8];
+				image_pad[37]	<= image[9];
+				image_pad[38] 	<= image[10];
+				image_pad[39] 	<= image[11];
+				image_pad[40] 	<= image[12];
+				image_pad[41] 	<= image[13];
+				image_pad[42:44] 	<= image[14];
+				image_pad[45:47] 	<= image[15];
+				image_pad[48]	<= image[16];
+				image_pad[49] 	<= image[17];
+				image_pad[50] 	<= image[18];
+				image_pad[51] 	<= image[19];
+				image_pad[52] 	<= image[20];
+				image_pad[53:55]	<= image[21];
+				image_pad[56:58] 	<= image[22];
+				image_pad[59] 	<= image[23];
+				image_pad[60] 	<= image[24];
+				image_pad[61] 	<= image[25];
+				image_pad[62] 	<= image[26];
+				image_pad[63] 	<= image[27];
+				image_pad[64:66] 	<= image[28];
+				image_pad[67:69] 	<= image[29];
+				image_pad[70] 	<= image[30];
+				image_pad[71] 	<= image[31];
+				image_pad[72] 	<= image[32];
+				image_pad[73] 	<= image[33];
+				image_pad[74] 	<= image[34];
+				image_pad[75:77] 	<= image[35];
+				image_pad[78:80] 	<= image[36];
+				image_pad[81] 	<= image[37];
+				image_pad[82] 	<= image[38];
+				image_pad[83] 	<= image[39];
+				image_pad[84] 	<= image[40];
+				image_pad[85] 	<= image[41];
+				image_pad[86:88] 		<= image[42];
+				image_pad[89:91] 		<= image[43];
+				image_pad[100:102]	<= image[43];
+				image_pad[111:113] 	<= image[43];
+				image_pad[92] 		<= image[44];
+				image_pad[103] 		<= image[44];
+				image_pad[114] 		<= image[44];
+				image_pad[93] 		<= image[45];
+				image_pad[104] 		<= image[45];
+				image_pad[115] 		<= image[45];
+				image_pad[94] 		<= image[46];
+				image_pad[105] 		<= image[46];
+				image_pad[116] 		<= image[46];
+				image_pad[95] 		<= image[47];
+				image_pad[106] 		<= image[47];
+				image_pad[117] 		<= image[47];
+				image_pad[96] 		<= image[48];
+				image_pad[107] 		<= image[48];
+				image_pad[118] 		<= image[48];
+				image_pad[97:99] 		<= image[49];
+				image_pad[108:110] 	<= image[49];
+				image_pad[119:121] 	<= image[49];
+			end
+			4'b1000 : begin
+				image_pad[1:3] 	<= image[1];
+				image_pad[13:15] 	<= image[1];
+				image_pad[25:27] 	<= image[1];
+				image_pad[4]		<= image[2];
+				image_pad[16] 	<= image[2];
+				image_pad[28] 	<= image[2];
+				image_pad[5] 		<= image[3];
+				image_pad[17] 	<= image[3];
+				image_pad[29] 	<= image[3];
+				image_pad[6]		<= image[4];
+				image_pad[18] 	<= image[4];
+				image_pad[30] 	<= image[4];
+				image_pad[7] 		<= image[5];
+				image_pad[19] 	<= image[5];
+				image_pad[31] 	<= image[5];
+				image_pad[8] 		<= image[6];
+				image_pad[20] 	<= image[6];
+				image_pad[32] 	<= image[6];
+				image_pad[9] 		<= image[7];
+				image_pad[21] 	<= image[7];
+				image_pad[33] 	<= image[7];
+				image_pad[10:12] 	<= image[8];
+				image_pad[22:24] 	<= image[8];
+				image_pad[34:36] 	<= image[8];
+				image_pad[37:39]	<= image[9];
+				image_pad[40]	<= image[10];
+				image_pad[41] 	<= image[11];
+				image_pad[42] 	<= image[12];
+				image_pad[43] 	<= image[13];
+				image_pad[44] 	<= image[14];
+				image_pad[45] 	<= image[15];
+				image_pad[46:48]	<= image[16];
+				image_pad[49:51] 	<= image[17];
+				image_pad[52] 	<= image[18];
+				image_pad[53] 	<= image[19];
+				image_pad[54]	<= image[20];
+				image_pad[55] 	<= image[21];
+				image_pad[56] 	<= image[22];
+				image_pad[57] 	<= image[23];
+				image_pad[58:60]	<= image[24];
+				image_pad[61:63] 	<= image[25];
+				image_pad[64] 	<= image[26];
+				image_pad[65] 	<= image[27];
+				image_pad[66] 	<= image[28];
+				image_pad[67] 	<= image[29];
+				image_pad[68] 	<= image[30];
+				image_pad[69] 	<= image[31];
+				image_pad[70:72]	<= image[32];
+				image_pad[73:75] 	<= image[33];
+				image_pad[76] 	<= image[34];
+				image_pad[77] 	<= image[35];
+				image_pad[78] 	<= image[36];
+				image_pad[79] 	<= image[37];
+				image_pad[80] 	<= image[38];
+				image_pad[81] 	<= image[39];
+				image_pad[82:84] 	<= image[40];
+				image_pad[85:87] 	<= image[41];
+				image_pad[88] 	<= image[42];
+				image_pad[89] 	<= image[43];
+				image_pad[90] 	<= image[44];
+				image_pad[91] 	<= image[45];
+				image_pad[92] 	<= image[46];
+				image_pad[93] 	<= image[47];
+				image_pad[94:96] 	<= image[48];
+				image_pad[97:99] 	<= image[49];
+				image_pad[100] 	<= image[50];
+				image_pad[101] 	<= image[51];
+				image_pad[102] 	<= image[52];
+				image_pad[103] 	<= image[53];
+				image_pad[104] 	<= image[54];
+				image_pad[105] 	<= image[55];
+				image_pad[106:108] 	<= image[56];
+				image_pad[109:111] 	<= image[57];
+				image_pad[121:123] 	<= image[57];
+				image_pad[133:135] 	<= image[57];
+				image_pad[112] 		<= image[58];
+				image_pad[124] 		<= image[58];
+				image_pad[136] 		<= image[58];
+				image_pad[113] 		<= image[59];
+				image_pad[125] 		<= image[59];
+				image_pad[137] 		<= image[59];
+				image_pad[114] 		<= image[60];
+				image_pad[126] 		<= image[60];
+				image_pad[138] 		<= image[60];
+				image_pad[115] 		<= image[61];
+				image_pad[127] 		<= image[61];
+				image_pad[139] 		<= image[61];
+				image_pad[116] 		<= image[62];
+				image_pad[128] 		<= image[62];
+				image_pad[140] 		<= image[62];
+				image_pad[117] 		<= image[63];
+				image_pad[129] 		<= image[63];
+				image_pad[141] 		<= image[63];
+				image_pad[118:120] 	<= image[64];
+				image_pad[130:132] 	<= image[64];
+				image_pad[142:144] 	<= image[64];
+			end
+		endcase
+	end
+end
+endmodule
+
+//convolution
+module input_image_mode(input clk, rst_n, filter, filter_size, image_size, output  image);				
+output [7:0]image[1:64];
+			
+				
+				
+
+
+
+module input_image_mode();
+
+
+module padding();

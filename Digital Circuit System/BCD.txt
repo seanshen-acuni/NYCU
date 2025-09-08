@@ -1,0 +1,62 @@
+module BCD(
+        in_bin,
+        out_hundred,
+        out_ten,
+        out_unit);
+
+input [8:0] in_bin;
+
+
+output logic [2:0]out_hundred;
+output logic [3:0]out_ten;
+output logic [3:0]out_unit;
+
+
+logic in_dec;
+logic hundred_dec,ten_dec,unit_dec;
+
+always @(*)
+  begin
+    in_dec = in_bin[8]*256+in_bin[7]*128+in_bin[6]*64+in_bin[5]*32+in_bin[4]*16
+                +in_bin[3]*8  +in_bin[2]*4  +in_bin[1]*2 +in_bin[0]*1;
+    hundred_dec =  in_dec / 100;
+    ten_dec     = (in_dec % 100) / 10;
+    unit_dec    =  in_dec % 10;
+    case(hundred_dec)
+      0:out_hundred = 3'b000;
+      1:out_hundred = 3'b001;
+2:out_hundred = 3'b010;
+      3:out_hundred = 3'b011;
+      4:out_hundred = 3'b100;
+      5:out_hundred = 3'b101;
+    default: out_hundred = 3'b000;
+    endcase
+    case(ten_dec)
+      0:out_ten = 4'b0000;
+      1:out_ten = 4'b0001;
+      2:out_ten = 4'b0010;
+      3:out_ten = 4'b0011;
+      4:out_ten = 4'b0100;
+      5:out_ten = 4'b0101;
+      6:out_ten = 4'b0110;
+      7:out_ten = 4'b0111;
+      8:out_ten = 4'b1000;
+      9:out_ten = 4'b1001;
+    default: out_ten = 4'b0000;
+    endcase
+    case(unit_dec)vim
+      0:out_unit = 4'b0000;
+0:out_unit = 4'b0000;
+      1:out_unit = 4'b0001;
+      2:out_unit = 4'b0010;
+      3:out_unit = 4'b0011;
+      4:out_unit = 4'b0100;
+      5:out_unit = 4'b0101;
+      6:out_unit = 4'b0110;
+      7:out_unit = 4'b0111;
+      8:out_unit = 4'b1000;
+      9:out_unit = 4'b1001;
+    default: out_unit = 4'b0000;
+    endcase
+  end
+endmodule
