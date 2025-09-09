@@ -9,7 +9,7 @@ The solver supports:
 - Path reconstruction with predecessor tracking.
 - Handling multiple maze patterns in sequence.
 
-This project was developed as part of **Algorithm Homework 8**.
+This project was developed as part of Algorithm Homework 8.
 
 ## Algorithm
 - Each maze is represented as a **17×17 grid**.  
@@ -28,7 +28,7 @@ This project was developed as part of **Algorithm Homework 8**.
 - `input.txt`: contains 20 mazes, each of size 17×17 with integers.  
 
 ### Output
-- `110612008_output.txt`: step count and path for each maze pattern.  
+- `output.txt`: step count and path for each maze pattern.  
 
 Example:
 pattern 1
@@ -44,10 +44,10 @@ step=33
 {17,17}
 
 ## Files
-- `main.cpp` – BFS implementation and file handling
+- `BFS.cpp` – BFS implementation and file handling
 - `input.txt` – example input mazes
-- `110612008_output.txt` – example output
-- `110612008_沈昱翔_HW8_report.pdf` – report with algorithm explanation
+- `output.txt` – example output
+- `report.pdf` – report with algorithm explanation
 
 ## Requirements
 - C++11 or higher
@@ -56,14 +56,14 @@ step=33
 ## Usage
 1. Compile the program:
    ```
-   g++ -std=c++11 -O2 -o maze_solver main.cpp
+   g++ -std=c++11 -O2 -o maze_solver BFS.cpp
    ```
 2. Run the solver:
   ```
   ./maze_solver
   ```
 3. Results will be written to:
-- 110612008_output.txt
+- output.txt
 
 ## Roadmap
 - Generalize to arbitrary maze sizes (N×N)
