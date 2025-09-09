@@ -29,11 +29,11 @@ Final mean rtol ≈ 1e-07
 
 ## Installation
 Clone the repository and install dependencies:
-```
-git clone https://github.com/your-username/gradient-checking.git
-cd gradient-checking
-pip install -r requirements.txt
-```
+  ```
+  git clone https://github.com/your-username/gradient-checking.git
+  cd gradient-checking
+  pip install -r requirements.txt
+  ```
 
 ## Requirements
 - Python 3.10+
@@ -43,17 +43,17 @@ pip install -r requirements.txt
 
 ## Usage
 1. Run the NumPy implementation:
-```
-python test_np.py --n 100 --output_dir ./grads_np
-```
+  ```
+  python test_np.py --n 100 --output_dir ./grads_np
+  ```
 2. Run the PyTorch implementation:
-```
-python test_pt.py --n 100 --output_dir ./grads_pt
-```
+  ```
+  python test_pt.py --n 100 --output_dir ./grads_pt
+  ```
 3. Compare gradients:
-```
-python diff.py --grads_np ./grads_np --grads_pt ./grads_pt --verbose
-```
+  ```
+  python diff.py --grads_np ./grads_np --grads_pt ./grads_pt --verbose
+  ```
 
 ## Support
 If you encounter issues or have questions:
