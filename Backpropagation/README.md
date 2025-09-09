@@ -8,11 +8,17 @@ The project is intended as an **educational resource** for learning about backpr
 
 ## Visuals
 Example output during training:
+
 iter: 00, loss: 2.32081
+
 iter: 01, loss: 2.30756
+
 ...
+
 rtol: 1.23E-07
+
 rtol: 8.45E-08
+
 Final mean rtol ≈ 1e-07
 
 ## Installation
