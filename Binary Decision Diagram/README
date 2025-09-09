@@ -1,4 +1,4 @@
-./Lab1 case1.txt out1.txt 
-./Lab1 case2.txt out2.txt 
-./Lab1 case3.txt out3.txt 
-./Lab1 case4.txt out4.txt 
+./BDD case1.txt out1.txt 
+./BDD case2.txt out2.txt 
+./BDD case3.txt out3.txt 
+./BDD case4.txt out4.txt 
