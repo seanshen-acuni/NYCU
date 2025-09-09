@@ -100,7 +100,7 @@ void countNodes(BDDNode* root, set<BDDNode*>& uniqueNodes) {
 int main(int argc, char* argv[]){
     //data reading
     if(argc < 3){
-        cerr << "Usage: ./Lab1 input.txt output.txt" << endl;
+        cerr << "Usage: ./BFS input.txt output.txt" << endl;
         return 1;
     }
     ifstream inputFile(argv[1]);
@@ -136,4 +136,5 @@ int main(int argc, char* argv[]){
     inputFile.close();
     outputFile.close();
     return 0;
+
 }
