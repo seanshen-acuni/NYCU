@@ -63,6 +63,11 @@ This project was developed as part of coursework.
 
 - Provide visualization of the BDD structure
 
+## Support
+If you encounter issues or have questions:
+- Open a GitHub Issue
+- Contact: 40924seanshen@gmail.com
+
 ## Authors and Acknowledgment
 Author: Sean Shen (沈昱翔)
 
@@ -71,4 +76,5 @@ This project is licensed under the MIT License.
 
 ## Project Status
 For Academic Portfolio – This project was developed as part of coursework and is shared for demonstration purposes. No active maintenance is planned.
+
 
