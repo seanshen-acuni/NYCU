@@ -8,7 +8,7 @@ const int dx[] = {1, 0, -1, 0};  // right, down, left, up
 const int dy[] = {0, 1, 0, -1};
 const int m = n * n;
 
-ofstream outputFile("110612008_output.txt");
+ofstream outputFile("output.txt");
 
 struct Vertex {
     int color; // 0: white, 1: gray, 2: black
@@ -107,3 +107,4 @@ int main() {
 
     return 0;
 }
+
