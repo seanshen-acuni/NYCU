@@ -1,4 +1,3 @@
-﻿//程式已經試過可以跑，但compile time比較久一點
 #include <iostream>
 #include <random>
 #include <ctime>
@@ -116,5 +115,6 @@ int main()
     //cout << "maximum sum is " << max_sum;
     cout << "maximum sum is " << current_max;
     return 0;
+
 
 }
