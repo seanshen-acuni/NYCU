@@ -50,12 +50,12 @@ This project was developed as part of coursework.
    make
    ```
 2. Run the solver on test cases:
-```
-./BDD case1.txt out1.txt
-./BDD case2.txt out2.txt
-./BDD case3.txt out3.txt
-./BDD case4.txt out4.txt
-```
+  ```
+  ./BDD case1.txt out1.txt
+  ./BDD case2.txt out2.txt
+  ./BDD case3.txt out3.txt
+  ./BDD case4.txt out4.txt
+  ```
 ## Support
 If you encounter issues or have questions:
 - Open a GitHub Issue
@@ -82,6 +82,7 @@ This project is licensed under the MIT License.
 
 ## Project Status
 For Academic Portfolio – This project was developed as part of coursework and is shared for demonstration purposes. No active maintenance is planned.
+
 
 
 
