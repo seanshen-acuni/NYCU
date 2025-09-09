@@ -6,6 +6,12 @@ It demonstrates how to build modular layers, implement forward/backward propagat
 
 The project is intended as an **educational resource** for learning about backpropagation and gradient checking.
 
+## Architecture
+- Input Layer: 784 neurons (28×28 MNIST-like)  
+- Hidden Layers: 2 × 128 neurons with ReLU activation  
+- Output Layer: 10 neurons with Softmax activation  
+- Loss Function: Cross-Entropy Loss
+
 ## Visuals
 Example output during training:
 
