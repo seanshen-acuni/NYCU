@@ -67,6 +67,11 @@ step=33
 3. Results will be written to:
 - output.txt
 
+## Support
+If you encounter issues or have questions:
+- Open a GitHub Issue
+- Contact: 40924seanshen@gmail.com
+
 ## Roadmap
 - Generalize to arbitrary maze sizes (N×N)
 - Support diagonal movements
