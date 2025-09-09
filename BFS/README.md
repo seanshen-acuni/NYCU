@@ -12,12 +12,14 @@ The solver supports:
 This project was developed as part of Algorithm Homework 8.
 
 ## Algorithm
-- Each maze is represented as a **17×17 grid**.  
-- BFS is applied starting from the top-left corner `(1,1)` (index 0).  
+- Each maze is represented as a **17×17 grid**.
+- Internally the program starts from `[0][0]` and ends at `[16][16]` (0-based indices).  
+- Output uses 1-based coordinates, so `[0][0]` prints as `{1,1}`, `[16][16]` prints as `{17,17}`.
+- BFS is applied starting from array position `[0][0]` (displayed as `{1,1}`).
 - Movement directions: right, down, left, up.  
-- Costs:
-  - Normal cell (`1`) → step cost = 1
-  - Special weighted cell (`2`) → step cost = 2
+- Step count:
+  - Entering cell `1` adds +1  
+  - Entering cell `2` adds +2 
 - Parent pointers (`pi`) are maintained to reconstruct the path.  
 - The result includes:
   - Total number of steps
