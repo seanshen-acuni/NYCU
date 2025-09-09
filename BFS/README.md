@@ -77,6 +77,14 @@ If you encounter issues or have questions:
 - Support diagonal movements
 - Add visualization of the maze and path
 
+## Contributing
+Contributions are welcome!
+
+1. Fork this repository
+2. Create a new branch: git checkout -b feature/my-feature
+3. Commit your changes
+4. Open a Pull Request
+
 ## Authors and Acknowledgment
 Author: Sean Shen (沈昱翔)
 
