@@ -56,17 +56,23 @@ This project was developed as part of coursework.
 ./BDD case3.txt out3.txt
 ./BDD case4.txt out4.txt
 ```
-## Roadmap
-- Add support for parentheses in Boolean expressions
-
-- Add parser for more general Boolean syntax
-
-- Provide visualization of the BDD structure
-
 ## Support
 If you encounter issues or have questions:
 - Open a GitHub Issue
 - Contact: 40924seanshen@gmail.com
+
+## Roadmap
+- Add support for parentheses in Boolean expressions
+- Add parser for more general Boolean syntax
+- Provide visualization of the BDD structure
+
+## Contributing
+Contributions are welcome!
+
+1. Fork this repository
+2. Create a new branch: git checkout -b feature/my-feature
+3. Commit your changes
+4. Open a Pull Request
 
 ## Authors and Acknowledgment
 Author: Sean Shen (沈昱翔)
@@ -76,5 +82,6 @@ This project is licensed under the MIT License.
 
 ## Project Status
 For Academic Portfolio – This project was developed as part of coursework and is shared for demonstration purposes. No active maintenance is planned.
+
 
 
