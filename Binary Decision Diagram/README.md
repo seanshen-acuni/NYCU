@@ -11,8 +11,6 @@ The solver supports:
   - Rule 1: If both children are the same, return that child.
   - Unique table: Nodes with identical `(var, low, high)` are shared.
 
-This project was developed as part of coursework.
-
 ## Algorithm
 **Example input (case1.txt):**
   ```
@@ -81,7 +79,8 @@ Author: Sean Shen (沈昱翔)
 This project is licensed under the MIT License.
 
 ## Project Status
-For Academic Portfolio – This project was developed as part of coursework and is shared for demonstration purposes. No active maintenance is planned.
+Completed – This project was developed as part of my academic research practice in EDA tools.
+
 
 
 
