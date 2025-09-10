@@ -43,7 +43,7 @@ To explore:
 3. Open `*.pdf` drawings and `*.dxf` file for bridge schematics.  
 4. Load `SeismicRS.txt`, `Artificial_1.txt`, and `zeta.bdb` in CSiBridge for analysis reproduction.  
 
-## Authors and Acknowledgment
+## Authors
 - Lead Designer: **Sean Shen (沈昱翔)**  
 - Team Members: 劉沛宸, 張育瑋, 張誌剛, 陳良魁, 李明翰  
 
