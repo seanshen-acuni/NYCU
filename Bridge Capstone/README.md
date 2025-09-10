@@ -1,4 +1,4 @@
-# Bridge Design Project (Civil Engineering Coursework)
+# Bridge Design Project (Civil Engineering Capstone)
 
 ## Description
 This project documents the design and analysis of a **cable-stayed bridge** as part of Civil Engineering coursework at NYCU.  
@@ -11,10 +11,10 @@ Responsibilities:
 - Designed bridge geometry and structural parameters (pylon, deck, cables, and traffic lanes) to keep moments and vertical displacements within allowable limits  
 - Modeled multi-hazard load combinations; conducted static analyses (dead, vehicle, wind) and dynamic analyses (seismic response-spectrum and time-history)  
 - Compiled and presented deliverables including:
-  - A 51-page technical report  
-  - Conference-style slide deck  
-  - 3D schematics with load response animations  
-  - Physical and virtual models  
+  - A 51-page technical report (team effort)   
+  - Conference-style slide deck (team effort)   
+  - 3D schematics with load response animations **(individually developed)**
+  - Physical and virtual models (team effort)   
 
 ## Files
 - `ReportInClass118.pdf` – Presentation slides (conference-style)  
@@ -51,4 +51,5 @@ This project is part of an **academic portfolio**. All rights reserved by the au
 Not intended for commercial use.
 
 ## Project Status
-Completed
+Completed – Delivered as part of Civil Engineering coursework.  
+Currently being reused in the lab’s ongoing bridge simulation research.
