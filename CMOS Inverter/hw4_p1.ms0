@@ -1,6 +1,0 @@
-$DATA1 SOURCE='HSPICE' VERSION='D-2010.03-SP2 32-BIT'
-.TITLE '******inverter design***********'
- ix1              ix2              cp               temper            
- alter#            
-  1.000e-05       -1.001e-05        3.290e-15         27.0000         
- 1                 
