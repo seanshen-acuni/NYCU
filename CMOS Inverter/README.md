@@ -8,21 +8,24 @@ It covers both **NMOS/PMOS transistor characterization** and **CMOS inverter des
 1. **NMOS / PMOS Design and Characterization**
    - Designed (W/L) for NMOS and PMOS transistors under VD=0.9 V, VG=0.9 V, IDS=10 μA.
    - Simulated IDS–VDS characteristics for multiple VG values (0.7 V–1.1 V).
-   - Netlist: `nmos_pmos_transistor_characterization.sp`
+   - Netlist: `NPMOS.sp`
 
 2. **CMOS Inverter Design**
-   - Designed inverter sizing for different IO and VI conditions.
-   - Simulated VO–VI transfer characteristics to verify design.
+   - Supply voltage: VDD = 1.8 V, GND = 0 V
+   - Two simulation sweeps were performed:
+     - **IO variation**: VO = VI = 0.9 V, IO = 10 μA / 20 μA / 30 μA
+     - **VI variation**: VO = 0.9 V, IO = 20 μA, VI = 0.7–1.1 V
+   - Simulated VO–VI transfer characteristics to verify inverter sizing.
    - Netlists:
-     - `cmos_inverter_io_variation_caseA.sp`
-     - `cmos_inverter_io_variation_caseB.sp`
-     - `cmos_inverter_vi_variation_caseA.sp`
-     - `cmos_inverter_vi_variation_caseB.sp`
+     - `CMOS_inv_io_caseA.sp`
+     - `CMOS_inv_io_caseB.sp`
+     - `CMOS_inv_vi_caseA.sp`
+     - `CMOS_inv_vi_caseB.sp`
 
 ## Files
 - `.sp` files – SPICE netlists for simulation
 - `cic018.l` – 0.18 μm CMOS technology library (required for simulation)
-- `introToVLSI_HW2_report.pdf` – Report with schematics, sizing details, and simulation results
+- `report.pdf` – Report with schematics, sizing details, and simulation results
 
 ## Requirements
 - **HSPICE** (or compatible SPICE simulator)
