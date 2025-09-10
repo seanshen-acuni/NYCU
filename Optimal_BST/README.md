@@ -21,11 +21,8 @@ This program demonstrates how dynamic programming can optimize binary search tre
 - **Time complexity**: O(n³) for n keys (classic DP implementation)
 - **Space complexity**: O(n²) for DP tables
 
-## Files
-- `OBST.cpp` – C++ implementation of the OBST algorithm
-- `report.pdf` – Report with results, analysis, and discussion of the OBST example
-
-## Sample Output
+## Input/Output
+output:
 ```
 p = 0.05 0.04 0.02 0.07 0.08 0.09 0.04 0.08 0.03
 q = 0.08 0.06 0.04 0.04 0.03 0.06 0.07 0.06 0.04 0.02
@@ -51,6 +48,11 @@ k5
         d8   
         d9
 ```
+## Files
+- `OBST.cpp` – C++ implementation of the OBST algorithm
+- `report.pdf` – Report with results, analysis, and discussion of the OBST example
+
+
 
 ## Requirements
 - C++11 or higher
