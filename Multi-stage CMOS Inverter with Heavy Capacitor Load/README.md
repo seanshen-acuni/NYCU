@@ -12,11 +12,11 @@ Key learning outcomes:
 - Analyzing dynamic logic (footed vs. unfooted structures)  
 
 ## Files
-- `UnitInv_C.sp` – Unit inverter sized at Vdd=1.8 V, Vi=Vo=0.9 V, used for input capacitance measurement  
-- `BufferChain_16C.sp` – Multi-stage buffer chain driving ~16× unit capacitance; transient analysis with pulse input  
-- `BufferChain_Fo4_16C.sp` – Fanout-of-4 buffer chain optimized for delay; rise/fall time and delay measured at each stage  
-- `CMOS_posedge_DLatch.sp` – Positive-edge triggered CMOS D latch; verified with a clocked input sequence  
-- `2InputDecoder_FootedUnfooted.sp` – Dynamic logic 2-input decoder; comparison between footed and unfooted designs  
+- `unit_inv_C.sp` – Unit inverter sized at Vdd=1.8 V, Vi=Vo=0.9 V, used for input capacitance measurement  
+- `buffer_chain_16C.sp` – Multi-stage buffer chain driving ~16× unit capacitance; transient analysis with pulse input  
+- `buffer_chain_fo4_16C.sp` – Fanout-of-4 buffer chain optimized for delay; rise/fall time and delay measured at each stage  
+- `CMOS_posedge_D_latch.sp` – Positive-edge triggered CMOS D latch; verified with a clocked input sequence  
+- `2_input_decoder_footed_unfooted.sp` – Dynamic logic 2-input decoder; comparison between footed and unfooted designs  
 - `cic018.l` – 0.18 μm CMOS technology library models  
 - `report.pdf` – Supporting report with schematics, measurement setup, and results
 
