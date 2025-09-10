@@ -21,11 +21,8 @@ The goal is to compare the practical performance of `O(n²)` vs. `O(n log n)` al
   - Average-case `O(n log n)`, but `O(n²)` in the worst case.  
   - Random pivot selection reduces the chance of worst-case performance.
 
-## Files
-- `IMHR.cpp` – C++ implementation of the four sorting algorithms and benchmarking
-- `report.pdf` – Analysis of runtime results, complexity discussion, and conclusions
-
-## Sample Output:
+## Input/Output:
+Example output:
 ```
 Enter the size of the array: 10000
 insertion-sorting runtime: 151647
@@ -33,6 +30,10 @@ merge-sorting runtime: 1441
 heapsorting runtime: 1573
 randomized quicksort runtime: 1327
 ```
+
+## Files
+- `IMHR.cpp` – C++ implementation of the four sorting algorithms and benchmarking
+- `report.pdf` – Analysis of runtime results, complexity discussion, and conclusions
 
 ## Requirements
 - C++11 or higher
