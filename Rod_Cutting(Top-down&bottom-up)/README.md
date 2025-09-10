@@ -74,6 +74,19 @@ compile time(bottom-up): 6
 - Bottom-Up avoids recursion and is faster, but solves all subproblems even if unnecessary.
 - Both yield the same optimal results, differing only in efficiency.
 
+## Support
+If you encounter issues or have questions:
+- Open a GitHub Issue
+- Contact: 40924seanshen@gmail.com
+
+## Contributing
+Contributions are welcome!
+
+1. Fork this repository
+2. Create a new branch: git checkout -b feature/my-feature
+3. Commit your changes
+4. Open a Pull Request
+
 ## Author
 Sean Shen (沈昱翔)
 
