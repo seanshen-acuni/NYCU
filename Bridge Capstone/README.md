@@ -10,11 +10,11 @@ It combines conceptual design, structural parameter modeling, and multi-hazard l
 Responsibilities:
 - Designed bridge geometry and structural parameters (pylon, deck, cables, and traffic lanes) to keep moments and vertical displacements within allowable limits  
 - Modeled multi-hazard load combinations; conducted static analyses (dead, vehicle, wind) and dynamic analyses (seismic response-spectrum and time-history)  
-- Compiled and presented deliverables including:
-  - A 51-page technical report (team effort)   
-  - Conference-style slide deck (team effort)   
-  - 3D schematics with load response animations **(individually developed)**
-  - Physical and virtual models (team effort)   
+- Developed 3D schematics with load response animations  
+- Contributed to team deliverables including:
+  - 51-page technical report  
+  - Conference-style slide deck  
+  - Physical and virtual models  
 
 ## Files
 - `ReportInClass118.pdf` – Presentation slides (conference-style)  
