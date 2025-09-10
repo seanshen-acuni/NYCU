@@ -13,7 +13,7 @@ The project is intended as an **educational resource** for learning about backpr
 - Loss Function: Cross-Entropy Loss
 
 ## Output
-Example output during training:
+Example output:
 ```
 iter: 00, loss: 2.32081
 iter: 01, loss: 2.30756
@@ -24,6 +24,11 @@ Final mean rtol ≈ 1e-07
 ```
 
 ## Files
+- test_pt.py - PyTorch reference implementation that generates ground truth gradients for validation.
+- test_np.py - Custom NumPy implementation using user-defined layers and loss functions.
+- layers.py - Contains all neural network layer implementations (MatMul, Bias, ReLU, Softmax, Sequential).
+- losses.py - Implements CrossEntropy loss function with forward and backward passes.
+- diff.py - Gradient comparison tool that validates NumPy implementation against PyTorch reference.
 
 ## Installation
 Clone the repository and install dependencies:
