@@ -30,18 +30,17 @@ The solver supports:
 ### Output
 - `output.txt`: step count and path for each maze pattern.  
 
-Example:
+Example output:
+```
 pattern 1
-
 step=33
-
 {1,1}
-
 {2,1}
-
 ...
-
 {17,17}
+pattern 2
+...
+```
 
 ## Files
 - `BFS.cpp` – BFS implementation and file handling
