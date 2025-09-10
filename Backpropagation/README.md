@@ -75,8 +75,8 @@ Contributions are welcome!
 3. Commit your changes
 4. Open a Pull Request
 
-## Authors and Acknowledgment
-Author: Sean Shen (沈昱翔)
+## Author
+Sean Shen (沈昱翔)
 
 ## License
 This project is licensed under the MIT License.
