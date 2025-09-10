@@ -1,4 +1,4 @@
-# CMOS Digital Circuit Design and SPICE Simulation
+# CMOS Inverter Chains, Posedge D-Latch, and Dynamic Logic Circuits
 
 ## Description
 This repository contains transistor-level CMOS digital circuits implemented and simulated in SPICE.  
