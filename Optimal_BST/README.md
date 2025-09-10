@@ -18,8 +18,8 @@ This program demonstrates how dynamic programming can optimize binary search tre
 - Recursively calculate the cost of subtrees for all possible roots.  
 - Select the root that minimizes cost, storing it in `root[i][j]`.  
 - Reconstruct and print the tree structure using the `Print_Optimal_BST` function.
-- Time complexity: O(n³) for n keys (classic DP implementation)
-- Space complexity: O(n²) for DP tables
+- **Time complexity**: O(n³) for n keys (classic DP implementation)
+- **Space complexity**: O(n²) for DP tables
 
 ## Files
 - `OBST.cpp` – C++ implementation of the OBST algorithm
