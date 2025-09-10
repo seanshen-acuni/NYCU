@@ -54,15 +54,16 @@ The solver supports:
   ./BDD case3.txt out3.txt
   ./BDD case4.txt out4.txt
   ```
-## Support
-If you encounter issues or have questions:
-- Open a GitHub Issue
-- Contact: 40924seanshen@gmail.com
 
 ## Roadmap
 - Add support for parentheses in Boolean expressions
 - Add parser for more general Boolean syntax
 - Provide visualization of the BDD structure
+
+## Support
+If you encounter issues or have questions:
+- Open a GitHub Issue
+- Contact: 40924seanshen@gmail.com
 
 ## Contributing
 Contributions are welcome!
@@ -80,6 +81,7 @@ This project is licensed under the MIT License.
 
 ## Project Status
 Completed – This project was developed as part of my academic research practice in EDA tools.
+
 
 
 
