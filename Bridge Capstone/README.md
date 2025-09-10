@@ -1,7 +1,8 @@
 # Bridge Design Project (Civil Engineering Capstone)
 
 ## Description
-This project documents the design and analysis of a **cable-stayed bridge** as part of Civil Engineering coursework at NYCU.  
+This project documents the design and analysis of a **cable-stayed bridge** completed as a Civil Engineering capstone project at NYCU.  
+ 
 It combines conceptual design, structural parameter modeling, and multi-hazard load analysis using **CSiBridge** and CAD tools, with results delivered through technical documentation, presentations, and physical/virtual models.
 
 ## Role
@@ -51,5 +52,5 @@ This project is part of an **academic portfolio**. All rights reserved by the au
 Not intended for commercial use.
 
 ## Project Status
-Completed – Delivered as part of Civil Engineering coursework.  
+Completed – This project was developed as part of an academic research project in structural engineering.  
 Currently being reused in the lab’s ongoing bridge simulation research.
