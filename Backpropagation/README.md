@@ -12,26 +12,22 @@ The project is intended as an **educational resource** for learning about backpr
 - Output Layer: 10 neurons with Softmax activation  
 - Loss Function: Cross-Entropy Loss
 
-## Visuals
+## Output
 Example output during training:
-
+```
 iter: 00, loss: 2.32081
-
 iter: 01, loss: 2.30756
-
 ...
-
 rtol: 1.23E-07
-
 rtol: 8.45E-08
-
 Final mean rtol ≈ 1e-07
+```
+
+## Files
 
 ## Installation
 Clone the repository and install dependencies:
   ```
-  git clone https://github.com/your-username/gradient-checking.git
-  cd gradient-checking
   pip install -r requirements.txt
   ```
 
@@ -54,11 +50,6 @@ Clone the repository and install dependencies:
   ```
   python diff.py --grads_np ./grads_np --grads_pt ./grads_pt --verbose
   ```
-
-## Support
-If you encounter issues or have questions:
-- Open a GitHub Issue
-- Contact: 40924seanshen@gmail.com
 
 ## Roadmap
 - Add more activation functions (Tanh, LeakyReLU)
