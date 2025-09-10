@@ -62,6 +62,11 @@ Clone the repository and install dependencies:
 - Implement numerical gradient checking
 - Add unit tests
 
+## Support
+If you encounter issues or have questions:
+- Open a GitHub Issue
+- Contact: 40924seanshen@gmail.com
+
 ## Contributing
 Contributions are welcome!
 
