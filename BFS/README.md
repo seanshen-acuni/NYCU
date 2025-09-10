@@ -9,8 +9,6 @@ The solver supports:
 - Path reconstruction with predecessor tracking.
 - Handling multiple maze patterns in sequence.
 
-This project was developed as part of Algorithm Homework 8.
-
 ## Algorithm
 - Each maze is represented as a **17×17 grid**.
 - Internally the program starts from `[0][0]` and ends at `[16][16]` (0-based indices).  
@@ -92,4 +90,4 @@ Author: Sean Shen (沈昱翔)
 This project is licensed under the MIT License.
 
 ## Project Status
-For Academic Portfolio – This project was developed as part of coursework and is shared for demonstration purposes. No active maintenance is planned.
+Completed – This project was developed as part of my **academic research practice** in algorithm design.
