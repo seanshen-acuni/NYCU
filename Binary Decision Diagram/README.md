@@ -73,14 +73,15 @@ Contributions are welcome!
 3. Commit your changes
 4. Open a Pull Request
 
-## Authors and Acknowledgment
-Author: Sean Shen (沈昱翔)
+## Author
+Sean Shen (沈昱翔)
 
 ## License
 This project is licensed under the MIT License.
 
 ## Project Status
 Completed – This project was developed as part of my academic research practice in EDA tools.
+
 
 
 
