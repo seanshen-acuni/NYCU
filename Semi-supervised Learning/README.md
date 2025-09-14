@@ -2,16 +2,25 @@
 
 ## Description
 Two complementary PyTorch implementations for 10-class animal image classification under a semi-supervised setting:
-- **CNN (ResNet18)** with confidence-based pseudo-labeling on unlabeled data.
-- **RNN (LSTM) baseline** that treats images as sequences and performs pseudo-labeling + retraining.
+- **CNN (ResNet18 backbone)** with confidence-based pseudo-labeling on unlabeled data.
+- **RNN (LSTM)** baseline that treats images as sequences and applies aggressive pseudo-labeling.
 
 Both pipelines resize images to **128×128** and run on GPU when available.
 
 ## Methods
 - **CNN (ResNet18)**  
-  - Train on labeled → generate pseudo-labels for **unlabeled** with a **probability threshold 0.95** → merge and retrain → predict (includes unlabeled + private test).
+  - Train the backbone on labeled_data for 1 epoch.
+  - Run inference on unlabeled_data only to generate pseudo-labels, keeping samples with probability > 0.95.
+  - Retrain on the union of labeled_data + high-confidence pseudo-labeled unlabeled_data.
+  - Perform final inference on the combined dataset (labeled_data + unlabeled_data + private_test_data) and save predictions to CSV.
+
 - **RNN (LSTM)**  
-  - Flatten image tensor to a sequence → LSTM → FC → train on labeled → **generate pseudo-labels for unlabeled (no threshold)** → merge and retrain → predict (unlabeled + private test; also provides a Kaggle-style CSV).
+  - Reshape each 128×128 image into a sequence of 128 steps × 128 features.
+  - Train on labeled_data for 10 epochs.
+  - Run inference on unlabeled_data only and assign pseudo-labels to all samples (no threshold).
+  - Retrain on the union of labeled_data + all pseudo-labeled unlabeled_data.
+  - Final inference on all three splits (labeled_data, unlabeled_data, private_test_data); outputs both a general CSV and a Kaggle-style CSV.
+
 
 ## Dataset layout
 The code expects this structure:
@@ -68,10 +77,9 @@ Both scripts read images from datasets/unlabeled_data and datasets/private_test_
   - `rnn_kaggle.csv` — Kaggle-style CSV as produced by the RNN script.
 
 ## Notes
-- CNN uses **ResNet18** backbones; the script collects high-confidence unlabeled samples with probability > 0.95 and retrains.
-- RNN uses a simple **LSTM** with `input_size=128`, `hidden_size=128`, `output_size=10`. It generates pseudo-labels for all unlabeled samples (no threshold).
-- The RNN script writes two CSVs: a Kaggle-style file and a general submission file, both with `ID,label` columns sorted by numeric ID.
-- After additional post-processing with pandas and tuning on the RNN pipeline, the RNN results actually surpassed the CNN baseline — mainly because the CNN model was not further optimized after its initial setup.
+- The CNN baseline is conservative: it filters pseudo-labels strictly and only trained for one epoch.
+- The RNN, while unconventional for images, trained longer (10 epochs) and leveraged all unlabeled data, giving it an edge in practice.
+- As a result, the RNN outperformed the CNN in final accuracy, even though CNN is typically the stronger architecture for vision tasks.
 
 ## Support
 If you encounter issues or have questions:
