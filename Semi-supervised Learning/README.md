@@ -21,7 +21,6 @@ Both pipelines resize images to **128×128** and run on GPU when available.
   - Retrain on the union of labeled_data + all pseudo-labeled unlabeled_data.
   - Final inference on all three splits (labeled_data, unlabeled_data, private_test_data); outputs both a general CSV and a Kaggle-style CSV.
 
-
 ## Dataset layout
 The code expects this structure:
 ```
@@ -68,12 +67,12 @@ python image_classification_cnn.py
 ```
 python image_classification_rnn.py
 ```
-Both scripts read images from datasets/unlabeled_data and datasets/private_test_data and write CSV predictions (IDs are file names).
+Both scripts read images from all three dataset directories (labeled_data for training, unlabeled_data and private_test_data for prediction) and write CSV predictions (IDs are file names).
 
 ## Results & Outputs
 - Example CSVs are included in the repo:
-  - `cnn_result.csv` — CNN predictions on `private_test_data`.
-  - `rnn_result.csv` — RNN predictions on `private_test_data`.
+  - `cnn_result.csv` — CNN predictions on combined dataset (labeled + unlabeled + private test data).
+  - `rnn_result.csv` — RNN predictions on combined dataset (labeled + unlabeled + private test data).
   - `rnn_kaggle.csv` — Kaggle-style CSV as produced by the RNN script.
 
 ## Notes
