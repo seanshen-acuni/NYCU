@@ -171,7 +171,7 @@ with torch.no_grad():
         _, predicted_k = torch.max(outputs, 1)
         predictions_k.extend(predicted_k.cpu().numpy())
 test_data_k["image_path"] = test_data_k["image_path"].apply(os.path.basename)
-# Save to sample_submission.csv
+# Save to sample_submission_kaggle.csv
 test_data_k['predictions'] = predictions_k
 test_data_k.rename(columns={"image_path": "ID", "predictions": "label"}, inplace=True)
 test_data_k['sort_key'] = test_data_k['ID'].str.extract(r'(\d+)').astype(int)
