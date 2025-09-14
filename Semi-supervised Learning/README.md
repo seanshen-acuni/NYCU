@@ -100,4 +100,4 @@ Sean Shen (沈昱翔)
 This project is licensed under the MIT License.
 
 ## Project Status
-Completed – Implemented, trained, and evaluated CNN & RNN semi-supervised pipelines; predictions generated for the `private_test_data` split.
+Completed – Implemented, trained, and evaluated CNN & RNN semi-supervised pipelines.
